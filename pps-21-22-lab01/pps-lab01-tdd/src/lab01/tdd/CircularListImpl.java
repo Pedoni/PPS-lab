@@ -51,7 +51,7 @@ public class CircularListImpl implements CircularList {
         Optional<Integer> current;
         for(int i = 0;i<this.size();i++){
             current = next();
-            if(strategy.apply(current.get())){
+            if(current.isPresent() && strategy.apply(current.get())){
                 return current;
             }
         }
