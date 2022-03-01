@@ -1,5 +1,3 @@
-package lab01.example.model;
-
 public abstract class AbstractBankAccount implements BankAccount {
 
     protected final AccountHolder holder;

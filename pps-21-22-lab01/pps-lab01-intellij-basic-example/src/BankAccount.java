@@ -1,5 +1,3 @@
-package lab01.example.model;
-
 /**
  * This interface defines the concept of a very basic bank account.
  */

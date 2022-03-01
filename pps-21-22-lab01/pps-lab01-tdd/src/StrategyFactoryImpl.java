@@ -1,5 +1,3 @@
-package lab01.tdd;
-
 public final class StrategyFactoryImpl implements StrategyFactory {
 
     @Override

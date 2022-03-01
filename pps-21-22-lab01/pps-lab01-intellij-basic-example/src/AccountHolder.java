@@ -1,5 +1,3 @@
-package lab01.example.model;
-
 /**
  * This class represents the account holder concept.
  * That is: a person that can subscribe a bank account.

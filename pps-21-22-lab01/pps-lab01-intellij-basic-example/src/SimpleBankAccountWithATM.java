@@ -1,5 +1,3 @@
-package lab01.example.model;
-
 public class SimpleBankAccountWithATM extends AbstractBankAccount {
 
     public SimpleBankAccountWithATM(final AccountHolder holder, final double balance) {

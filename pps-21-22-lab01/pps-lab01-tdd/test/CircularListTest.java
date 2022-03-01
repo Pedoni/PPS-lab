@@ -1,7 +1,7 @@
-import lab01.tdd.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +15,10 @@ public class CircularListTest {
         list = new CircularListImpl();
     }
 
+    private void fillList(final List<Integer> initializer) {
+        initializer.forEach((i) -> this.list.add(i));
+    }
+
     @Test
     void testListIsEmpty(){
         assertTrue(list.isEmpty());
@@ -22,15 +26,13 @@ public class CircularListTest {
 
     @Test
     void testAddOneValue(){
-        list.add(1);
+        this.list.add(1);
         assertEquals(1, list.size());
     }
 
     @Test
     void testAddMultipleValues(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         assertEquals(3, list.size());
     }
 
@@ -41,17 +43,13 @@ public class CircularListTest {
 
     @Test
     void testFirstNextOnFilledList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         assertEquals(this.list.next(), Optional.of(1));
     }
 
     @Test
     void testLastNextOnFilledList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         this.list.next();
         this.list.next();
         assertEquals(this.list.next(), Optional.of(3));
@@ -59,9 +57,7 @@ public class CircularListTest {
 
     @Test
     void testFirstAgainNextOnFilledList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         this.list.next();
         this.list.next();
         this.list.next();
@@ -70,9 +66,7 @@ public class CircularListTest {
 
     @Test
     void testResetList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         this.list.next();
         this.list.next();
         list.reset();
@@ -86,26 +80,20 @@ public class CircularListTest {
 
     @Test
     void testFirstPreviousOnFilledList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         assertEquals(this.list.previous(), Optional.of(2));
     }
 
     @Test
     void testLastPreviousOnFilledList(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         this.list.previous();
         assertEquals(this.list.previous(), Optional.of(1));
     }
 
     @Test
     void testMoveCombined(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         this.list.previous();
         this.list.previous();
         this.list.next();
@@ -116,51 +104,36 @@ public class CircularListTest {
 
     @Test
     void testEvenStrategy(){
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        this.fillList(List.of(1,2,3));
         assertEquals(this.list.next(new StrategyFactoryImpl().createEvenStrategy()), Optional.of(2));
     }
 
     @Test
     void testEvenStrategyFail(){
-        list.add(1);
-        list.add(5);
-        list.add(3);
+        this.fillList(List.of(1,5,3));
         assertEquals(this.list.next(new StrategyFactoryImpl().createEvenStrategy()), Optional.empty());
     }
 
     @Test
     void testMultipleOfStrategy(){
-        list.add(3);
-        list.add(4);
-        list.add(5);
-        list.add(2);
+        this.fillList(List.of(3,4,5,2));
         assertEquals(this.list.next(new StrategyFactoryImpl().createMultipleOfStrategy(2)), Optional.of(4));
     }
 
     @Test
     void testMultipleOfStrategyFail(){
-        list.add(3);
-        list.add(5);
-        list.add(8);
+        this.fillList(List.of(3,5,8));
         assertEquals(this.list.next(new StrategyFactoryImpl().createMultipleOfStrategy(7)), Optional.empty());
     }
     @Test
     void testEqualsStrategy(){
-        list.add(3);
-        list.add(4);
-        list.add(2);
-        list.add(5);
-        list.add(2);
+        this.fillList(List.of(3,4,2,5,2));
         assertEquals(this.list.next(new StrategyFactoryImpl().createEqualsStrategy(2)), Optional.of(2));
     }
 
     @Test
     void testEqualsStrategyFail(){
-        list.add(3);
-        list.add(5);
-        list.add(8);
+        this.fillList(List.of(3,5,8));
         assertEquals(this.list.next(new StrategyFactoryImpl().createEqualsStrategy(7)), Optional.empty());
     }
 
