@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/lab01.iml" filepath="$PROJECT_DIR$/.idea/lab01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pps-21-22-lab01/pps-lab01-intellij-basic-example/pps-lab01-intellij-basic-example.iml" filepath="$PROJECT_DIR$/pps-21-22-lab01/pps-lab01-intellij-basic-example/pps-lab01-intellij-basic-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pps-21-22-lab01/pps-lab01-tdd/pps-lab01-tdd.iml" filepath="$PROJECT_DIR$/pps-21-22-lab01/pps-lab01-tdd/pps-lab01-tdd.iml" />
+    </modules>
+  </component>
+</project>
