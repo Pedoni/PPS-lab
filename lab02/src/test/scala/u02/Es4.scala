@@ -15,9 +15,15 @@ class Es4 {
   
 
   @Test def testSorted() =
-    assertTrue(sortedVal(5,6,7) && !sortedVal(5,7,6) && sortedDef(5,6,7) && !sortedDef(7,6,5))
+    assertTrue(sortedVal(5,6,7))
+    assertFalse(sortedVal(5,7,6))
+    assertTrue(sortedDef(5,6,7))
+    assertFalse(sortedDef(7,6,5))
 
   @Test def testSortedWithCurrying() =
-    assertTrue(sortedValC(5)(6)(7) && !sortedValC(5)(7)(6) && sortedDefC(5)(6)(7) && !sortedDefC(5)(7)(6))
+    assertTrue(sortedValC(5)(6)(7))
+    assertFalse(sortedValC(5)(7)(6))
+    assertTrue(sortedDefC(5)(6)(7))
+    assertFalse(sortedDefC(5)(7)(6))
 
 }

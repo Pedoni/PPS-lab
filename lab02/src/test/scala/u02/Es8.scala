@@ -1,6 +1,6 @@
 package u02
 
-import org.junit.Assert.assertTrue
+import org.junit.Assert.*
 import org.junit.*
 import Option.*
 
@@ -23,11 +23,15 @@ object Option:
     case _ => None()
 
   def filter[A](opt: Option[A])(f: Option[A] => Boolean): Option[A] = opt match
-    case Some(a) => if(f(opt)) Some(a) else None()
+    case Some(a) => f(opt) match
+      case true => Some(a)
+      case _ => None()
     case _ => None()
 
   def map[A](opt: Option[A])(f: Option[A] => Boolean): Option[Boolean] = opt match
-    case Some(a) => if(f(opt)) Some(true) else Some(false)
+    case Some(a) => f(opt) match
+      case true => Some(true)
+      case _ => Some(false)
     case _ => None()
 
   def map2[A, B, C](opt1: Option[A])(opt2: Option[B])(f: (Option[A], Option[B]) => Option[C]): Option[C] = (opt1, opt2) match
@@ -42,21 +46,27 @@ class Es8 {
   val h: (Option[Int], Option[Int]) => Option[Boolean] = (x, y) => Option.Some(x == y)
 
   @Test def testIsEmpty() =
-    assertTrue(isEmpty(none) && !isEmpty(Some(2)))
+    assertTrue(isEmpty(none))
+    assertFalse(isEmpty(Some(2)))
 
   @Test def testOrElse() =
-    assertTrue(orElse(Some(1), 0) == 1 && orElse(none, 0) == 0)
+    assertTrue(orElse(Some(1), 0) == 1)
+    assertTrue(orElse(none, 0) == 0)
 
   @Test def testFlatMap() =
-    assertTrue(flatMap(Some(1))(i => Some(i+1)) == Some(2) && flatMap(Some(1))(i => flatMap(none)(j => Some(i+j))) == none)
+    assertTrue(flatMap(Some(1))(i => Some(i+1)) == Some(2))
+    assertTrue(flatMap(Some(1))(i => flatMap(none)(j => Some(i+j))) == none)
 
   @Test def testFilter() =
-    assertTrue(filter(Some(1))(f) == none && filter(Some(5))(g) == none)
+    assertTrue(filter(Some(1))(f) == none)
+    assertTrue(filter(Some(5))(g) == none)
 
   @Test def testMap() =
-    assertTrue(map(Some(5))(f) == Option.Some(true) && map(Some(5))(g) == Option.Some(false))
+    assertTrue(map(Some(5))(f) == Option.Some(true))
+    assertTrue(map(Some(5))(g) == Option.Some(false))
 
   @Test def testMap2() =
-    assertTrue(map2(Some(5))(none)(h) == none && map2(Some(5))(Some(2))(h) == Option.Some(false))
+    assertTrue(map2(Some(5))(none)(h) == none)
+    assertTrue(map2(Some(5))(Some(2))(h) == Option.Some(false))
 
 }

@@ -24,9 +24,13 @@ object Shape:
 class Es7 {
 
   @Test def testShapePerimeter() =
-    assertTrue(perimeter(Rectangle(4,3))==14 && perimeter(Circle(5))==10*Math.PI && perimeter(Square(6))==24)
+    assertTrue(perimeter(Rectangle(4,3))==14)
+    assertTrue(perimeter(Circle(5))==10*Math.PI)
+    assertTrue(perimeter(Square(6))==24)
 
   @Test def testShapeArea() =
-    assertTrue(area(Rectangle(4,3))==12 && area(Circle(5))==25*Math.PI && area(Square(6))==36)
+    assertTrue(area(Rectangle(4,3))==12)
+    assertTrue(area(Circle(5))==25*Math.PI)
+    assertTrue(area(Square(6))==36)
   
 }

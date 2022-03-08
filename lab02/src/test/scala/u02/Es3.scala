@@ -5,7 +5,9 @@ import org.junit.Assert.*
 
 class Es3 {
 
-  val parityVal: Int => String = n => if (n%2==0) "even" else "odd"
+  val parityVal: Int => String = n => n match
+    case n if n%2==0 => "even"
+    case _ => "odd"
 
   def parityDef(n: Int): String = n match
     case n if n%2==0 => "even"
