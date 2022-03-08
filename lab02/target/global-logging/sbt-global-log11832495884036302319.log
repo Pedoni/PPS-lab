@@ -1,0 +1,88 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.6.2 (Oracle Corporation Java 15.0.2)
+[debug] Load.defaultLoad until apply took 9490.6769ms
+[debug]           Load.loadUnit: plugins took 590.3307ms
+[debug]           Load.loadUnit: defsScala took 0.3687ms
+[debug] [Loading] Scanning directory C:\Users\emala\Desktop\PPS\Laboratorio\lab02\project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\emala\Desktop\PPS\Laboratorio\lab02\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 57.0133 ms
+[debug]               Load.resolveProject(lab02-build) took 270.2477ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id lab02-build, base: C:\Users\emala\Desktop\PPS\Laboratorio\lab02\project, plugins: List(<none>))) took 478.7633ms
+[debug] [Loading] Done in C:\Users\emala\Desktop\PPS\Laboratorio\lab02\project, returning: (lab02-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 589.6756ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.4429ms
+[debug]         Load.loadUnit(file:/C:/Users/emala/Desktop/PPS/Laboratorio/lab02/project/, ...) took 1192.2261ms
+[debug]       Load.apply: load took 3609.7543ms
+[debug]       Load.apply: resolveProjects took 12.2494ms
+[debug]       Load.apply: finalTransforms took 653.4839ms
+[debug]       Load.apply: config.delegates took 50.7326ms
+[debug]       Load.apply: Def.make(settings)... took 3893.4613ms
+[debug]       Load.apply: structureIndex took 1265.6761ms
+[debug]       Load.apply: mkStreams took 1.6266ms
+[info] loading project definition from C:\Users\emala\Desktop\PPS\Laboratorio\lab02\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 23816.8668ms
+[debug]     Load.loadUnit: defsScala took 0.0048ms
+[debug] [Loading] Scanning directory C:\Users\emala\Desktop\PPS\Laboratorio\lab02
+[debug]       Load.loadUnit: mkEval took 118.0995ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 6.1822 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 4.8116ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\emala\Desktop\PPS\Laboratorio\lab02, plugins: List(<none>))) took 13.2294ms
+[debug] [Loading] Done in C:\Users\emala\Desktop\PPS\Laboratorio\lab02, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1778.5384ms
+[debug]     Load.loadUnit: cleanEvalClasses took 439.1689ms
+[debug]   Load.loadUnit(file:/C:/Users/emala/Desktop/PPS/Laboratorio/lab02/, ...) took 26044.8472ms
+[debug] Load.apply: load took 26181.1139ms
+[debug] Load.apply: resolveProjects took 0.2834ms
+[debug] Load.apply: finalTransforms took 193.3173ms
+[debug] Load.apply: config.delegates took 0.6172ms
+[debug] Load.apply: Def.make(settings)... took 351.6558ms
+[debug] Load.apply: structureIndex took 84.1607ms
+[debug] Load.apply: mkStreams took 0.0023ms
+[info] set current project to lab (in build file:/C:/Users/emala/Desktop/PPS/Laboratorio/lab02/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:sbt-server-7453831d1e2a551cbd8b
+[debug] Writing bsp connection file
+[info] started sbt server
