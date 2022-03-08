@@ -5,12 +5,12 @@ import org.junit.Assert.*
 
 class Es3 {
 
-  val parityVal: Int => String = n => n match
-    case n if n%2==0 => "even"
+  val parityVal: Int => String = n => (n%2) match
+    case 0 => "even"
     case _ => "odd"
 
-  def parityDef(n: Int): String = n match
-    case n if n%2==0 => "even"
+  def parityDef(n: Int): String = (n%2) match
+    case 0 => "even"
     case _ => "odd"
 
   val empty: String => Boolean = _ == ""
