@@ -23,12 +23,15 @@ class Es3 {
   
   
   @Test def testEven() =
-    assertTrue(parityVal(2) == "even" && parityDef(2) == "even")
+    assertTrue(parityVal(2) == "even")
+    assertTrue(parityDef(2) == "even")
 
   @Test def testOdd() =
-    assertTrue(parityVal(5) == "odd" && parityDef(5) == "odd")
+    assertTrue(parityVal(5) == "odd")
+    assertTrue(parityDef(5) == "odd")
 
   @Test def testNotEmpty() =
-    assertTrue(notEmpty("hello") && !notEmpty(""))
+    assertTrue(notEmpty("hello"))
+    assertFalse(notEmpty(""))
   
 }
