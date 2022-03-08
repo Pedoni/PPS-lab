@@ -14,13 +14,13 @@ class Es6 {
     def tail(x: Int, prev: Int, curr: Int): Int = (x<=0) match
       case true => curr
       case _ => tail(x - 1, prev + curr, prev)
-    tail(x, prev = 1, curr = 0)
+    tail(x, 1, 0)
 
   
   @Test def testFibonacci() =
     assertEquals(fib(7), 13)
 
   @Test def testFibonacciTail() =
-    assertEquals(fib(7), 13)
+    assertEquals(fibTail(7), 13)
   
 }
