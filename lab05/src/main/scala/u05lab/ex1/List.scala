@@ -1,9 +1,7 @@
 package u05lab.ex1
 
 import u05lab.ex1.List
-
 import scala.annotation.tailrec
-import scala.runtime.Nothing$
 
 enum List[A]:
   case ::(h: A, t: List[A])

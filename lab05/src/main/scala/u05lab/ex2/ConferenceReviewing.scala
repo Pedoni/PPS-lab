@@ -2,9 +2,6 @@ package u05lab.ex2
 
 import scala.collection.immutable.ListMap
 
-/**
- * For each article, the reviewer has to reply to all the following questions
- */
 enum Question:
   case Relevance
   case Significance
@@ -12,21 +9,13 @@ enum Question:
   case Final
 
 trait ConferenceReviewing:
-
   var list: List[(Int, Map[Question, Int])]
-
   def loadReview(article: Int, scores: Map[Question, Int]): Unit
-
   def loadReview(article: Int, relevance: Int, significance: Int, confidence: Int, fin: Int): Unit
-
   def orderedScores(article: Int, question: Question): List[Int]
-
   def averageScore(article: Int): Double
-
   def acceptedArticles(): Set[Int]
-
   def sortedAcceptedArticles(): List[(Int, Double)]
-
   def averageWeightedFinalScoreMap(): Map[Int, Double]
 
 class ConferenceReviewingImpl extends ConferenceReviewing:
@@ -36,7 +25,7 @@ class ConferenceReviewingImpl extends ConferenceReviewing:
   override var list: List[(Int, Map[Question, Int])] = List.empty
 
   override def loadReview(article: Int, scores: Map[Question, Int]): Unit =
-    this.list = this.list:+ (article, scores)
+    this.list = this.list :+ (article, scores)
 
   override def loadReview(article: Int, relevance: Int, significance: Int, confidence: Int, fin: Int): Unit =
     this.list = this.list :+ (article, Map(Relevance -> relevance, Significance -> significance, Confidence -> confidence, Final -> fin))
